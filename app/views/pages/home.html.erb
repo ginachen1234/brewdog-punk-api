@@ -1,2 +1,55 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!DOCTYPE html>
+
+
+<html lang="en">
+<head>
+
+  <nav class="navbar">
+    <a href="#" class="navbar-brand">BREWDOG</a>
+    <a href="#" class="navbar-brand"><img src="https://images.pexels.com/photos/1624172/pexels-photo-1624172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="width: 50px; vertical-align: middle;"></a>
+    <ul>
+      <li><a href="#html">Beers</a></li>
+      <li><a href="#css">Community</a></li>
+      <li><a href="#javascript">Shop</a></li>
+    </ul>
+    <button class="navbar-toggler">
+      <span></span>
+    </button>
+  </nav>
+
+
+  <ul id="results"></ul>
+  <script>
+const results = document.querySelector("#results");
+
+fetch("https://api.punkapi.com/v2/beers?brewed_after=12-2015&abv_gt=5&abv_lt=11")
+  .then(response => response.json())
+  .then((data) => {
+    data.Search.forEach((result) => {
+      const movie = `<li>
+        <img src="${result.Poster}" alt="">
+        <p>${result.Title}</p>
+      </li>`;
+      results.insertAdjacentHTML("beforeend", movie);
+    });
+  });
+  </script>
+
+  <header class="intro"></header>
+  <section id="html" class="container"><h2><i class="fab fa-html5"></i></h2></section>
+  <section id="css" class="container"><h2><i class="fab fa-css3-alt"></i></h2></section>
+  <section id="javascript" class="container"><h2><i class="fab fa-js"></i></h2></section>
+
+
+
+
+
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+</body>
+</html>
