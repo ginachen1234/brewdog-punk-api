@@ -31,6 +31,7 @@ fetch("https://api.punkapi.com/v2/beers?brewed_after=12-2015&abv_gt=5&abv_lt=11"
     data.forEach((result) => {
       var brewed = result.first_brewed;
       var brewed_year = parseInt(brewed.substring(brewed.indexOf("/")+1));
+      var ingredients = result.ingredients.malt; console.log(ingredients[0].name);
 
       if((result.abv > 5 && result.abv<11) && brewed_year>=2015) {
         const beers = '<li><img src="'+result.image_url+'" alt=""><h3>'+result.name+'</h3><p>'+result.ingredients+'</p><p>'+result.abv+'</p><p>'+result.description+'</p></li>';
