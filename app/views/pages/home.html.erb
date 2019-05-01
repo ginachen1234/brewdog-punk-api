@@ -6,7 +6,7 @@
 
   <nav class="navbar">
     <a href="#" class="navbar-brand">BREWDOG</a>
-    <a href="#" class="navbar-brand"><img src="https://images.pexels.com/photos/1624172/pexels-photo-1624172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="width: 50px; vertical-align: middle;"></a>
+    <a href="#" class="navbar-brand"><img class = "img"  style = " margin-top: -28px;"src="https://images.pexels.com/photos/1624172/pexels-photo-1624172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="width: 50px;"></a>
     <ul>
       <li><a href="#html">Beers</a></li>
       <li><a href="#css">Community</a></li>
@@ -18,31 +18,21 @@
   </nav>
 
 
-  <ul id="results"></ul>
-  <script>
-const results = document.querySelector("#results");
 
-fetch("https://api.punkapi.com/v2/beers?brewed_after=12-2015&abv_gt=5&abv_lt=11")
-  .then(response => response.json())
-  .then((data) => {
-    data.Search.forEach((result) => {
-      const movie = `<li>
-        <img src="${result.Poster}" alt="">
-        <p>${result.Title}</p>
-      </li>`;
-      results.insertAdjacentHTML("beforeend", movie);
-    });
-  });
-  </script>
 
   <header class="intro"></header>
-  <section id="html" class="container"><h2><i class="fab fa-html5"></i></h2></section>
-  <section id="css" class="container"><h2><i class="fab fa-css3-alt"></i></h2></section>
-  <section id="javascript" class="container"><h2><i class="fab fa-js"></i></h2></section>
 
+<div class = "img-1" style = "text-align: center; background-color:white;" ><style>
+img { width:55px; }
+</style>
+</div>
 
-
-
+<div class = "beer-card">
+<ul class="card-category " style=" display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 40px; margin: 30px" id="results">
+</ul>
+</div>
 
   <meta charset="UTF-8">
   <title>Document</title>
