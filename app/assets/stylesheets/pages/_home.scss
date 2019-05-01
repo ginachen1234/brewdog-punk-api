@@ -64,13 +64,7 @@ body {
   display: none;
 }
 
-.intro {
-  width: 100%;
-  height: 100vh;
-  background: url("https://images.pexels.com/photos/1089932/pexels-photo-1089932.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500") no-repeat center center;
-  background-size: cover;
-  background-color: #000;
-}
+
 .container {
   position: relative;
   height: 100vh;
@@ -239,5 +233,143 @@ background-color: lightgrey;
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+.btn {
+
+  & {
+    display: inline-block;
+         margin-top: 124px;
+    position: relative;
+    color: hsl(0, 0%, 94%);
+    background: transparent;
+    font-family: inherit;
+    padding: 2rem 7rem;
+    border: 2 solid white;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+    outline: .2rem solid transparent;
+    outline-offset: .6rem;
+    overflow: hidden;
+    user-select: none;
+  }
+
+  // windows high contrast mode /start
+  // =================================
+  @media screen and (-ms-high-contrast: active) {
+
+    & {
+      color: buttonText;
+      border: 0;
+      outline-color: currentColor;
+      outline-offset: .2rem;
+    }
+
+    &:hover,
+    &:focus {
+      background: highlight;
+    }
+
+    &::before,
+    &>.span1,
+    &>.span2 {
+      display: none;
+    }
+
+  }
+
+  // ===============================
+  // windows high contrast mode /end
+
+  &::before {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      linear-gradient(to right, hsla(0, 0%, 94%, .6) 0px, transparent 2px, transparent 2px),
+      linear-gradient(to left, hsla(0, 0%, 94%, .6) 0px, transparent 2px, transparent 2px),
+      linear-gradient(to bottom, hsla(0, 0%, 94%, .6) 0px, transparent 2px, transparent 2px),
+      linear-gradient(to top, hsla(0, 0%, 94%, .6) 0px, transparent 2px, transparent 2px);
+    opacity: .1;
+  }
+
+  &>* {
+    display: inline-block;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &>.span1 {
+    width: 110%;
+    height: 110%;
+    border-radius: 100%;
+    background: radial-gradient(circle at center, hsla(0, 0%, 94%, .6), transparent);
+    transform: translate(-50%, -50%);
+    filter: blur(4rem);
+    opacity: 0;
+
+    // windows high contrast mode /start
+    // =================================
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      display: none;
+    }
+
+    // windows high contrast mode /end
+    // ===============================
+  }
+
+  &>.span2 {
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    //background: hsl(0, 0%, 94%); // uncomment this if you need background on .span2
+    box-shadow: 0 0 0 0 hsl(0, 0%, 94%), inset 0 0 1rem hsl(0, 0%, 94%);
+    opacity: .4;
+  }
+
+  // firefox dotted border on focus /start
+  // =====================================
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  // ===================================
+  // firefox dotted border on focus /end
+
+  &:active {
+    transform: scale(.98); // <- this, does not work, when using keyboard in Firefox
+  }
+
+  &:focus {
+
+    & {
+      border-width: .2rem; // does not needed, but for Windows High Contrast Mode.
+      outline-color: hsla(0, 0%, 94%, .2); // really bad idea to use alpha in outline-color
+    }
+
+    &>.span1 {
+      top: 90% !important;
+      left: 50% !important;
+      opacity: 1 !important;
+    }
+
+  }
+
+}
+
+.gradiant{
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0.2));
+  height: 100vh;
+  width: 100vw;
+  }
+
+
 
 

@@ -6,11 +6,11 @@
 
   <nav class="navbar">
     <a href="#" class="navbar-brand">BREWDOG</a>
-    <a href="#" class="navbar-brand"><img class = "img"  style = " margin-top: -28px;"src="https://images.pexels.com/photos/1624172/pexels-photo-1624172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="width: 50px;"></a>
+    <a href="#" class="navbar-brand"><img class = "img"  style = " margin-top: -28px;margin-left: -155px;"src="https://images.pexels.com/photos/1624172/pexels-photo-1624172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" style="width: 50px;"></a>
     <ul>
-      <li><a href="#html">Beers</a></li>
-      <li><a href="#css">Community</a></li>
-      <li><a href="#javascript">Shop</a></li>
+      <li><a id ="beers">Beers</a></li>
+      <li><a id ="community" >Community </a></li>
+      <li><a id = "shop">Shop</a></li>
     </ul>
     <button class="navbar-toggler">
       <span></span>
@@ -18,15 +18,34 @@
   </nav>
 
 
+ <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/1089932/pexels-photo-1089932.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);">
+  <div class="container">
+
+<div class = "banner-border">
+  <p style="margin-top:50px; font-family:Arial;"><br><br><br><br>BrewDog is a multinational brewery and pub chain based in Ellon, Scotland. <br>BrewDog produces bottled and canned beers in a variety of styles such as ale, stout, India pale ale (IPA) and lager, some of which are also available in keg containers.
+
+The bottled beers are distributed to British supermarkets and exported worldwide; kegs are available in the United Kingdom and Ireland.</p>
+    <a class="btn btn-flat" id = "btn"> Discover now!</a>
+    </div>
+  </div>
+</div>
 
 
-  <header class="intro"></header>
 
+
+  </header>
+
+
+
+  <meta charset="UTF-8">
+
+</head>
+<body>
 <div class = "img-1" style = "text-align: center; background-color:white;" ><style>
 img { width:55px; }
 </style>
 </div>
-
+<section class = "beers" id = "beers">
 <div class = "beer-card">
 <ul class="card-category " style=" display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -34,11 +53,22 @@ img { width:55px; }
 </ul>
 </div>
 
-  <meta charset="UTF-8">
-  <title>Document</title>
-</head>
-<body>
 
+
+<div class="gradiant"></div>
+  <div class="video">
+  <%= video_tag "timelapsesky.mp4", autoplay: "autoplay", id: "video", muted: true, width: "100%", loop: "true", :class => "video"%>
+  </div>
+
+<script>
+ const btn = document.getElementById('btn');
+
+btn.addEventListener('click', () => window.scrollTo({
+  top: 550,
+  behavior: 'smooth',
+}));
+
+</script>
 
 
 </body>
