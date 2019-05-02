@@ -34,10 +34,10 @@ fetch("https://api.punkapi.com/v2/beers?brewed_after=12-2015&abv_gt=5&abv_lt=11"
       var ingredients = result.ingredients.malt; console.log(ingredients[0].name);
 
       if((result.abv > 5 && result.abv<11) && brewed_year>=2015) {
-        const beers = '<li><img src="'+result.image_url+'" alt=""><h3>'+result.name+'</h3><p>'+result.ingredients+'</p><p>'+result.abv+'</p><p>'+result.description+'</p></li>';
+        const beers = '<li><img src="'+result.image_url+'" alt=""><h3>'+result.name+'</h3><p>'+result.abv+'</p><p>'+ingredients[0].name+'</p><p>'+result.description+'</p></li>';
         results.insertAdjacentHTML("beforeend", beers);
       }
-
+var ingredients = result.ingredients.malt; console.log(ingredients[0].name);
     });
   });
 
@@ -163,7 +163,13 @@ btn.addEventListener("touchend", function() { mouseUp(span2) });
 //
 
 
+//navbar
+const beers = document.getElementById('beers');
 
+beers.addEventListener('click', () => window.scrollTo({
+  top: 550,
+  behavior: 'smooth',
+}));
 
 
 
