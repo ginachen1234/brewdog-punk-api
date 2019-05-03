@@ -37,6 +37,8 @@ The bottled beers are distributed to British supermarkets and exported worldwide
 
 
 
+
+
   <meta charset="UTF-8">
 
 </head>
@@ -52,13 +54,43 @@ img { width:55px; }
   grid-gap: 40px; margin: 30px" id="results">
 </ul>
 </div>
+</section>
 
+
+
+<div class="grid">
+        <figure class="effect-brewdog">
+          <img src="https://res.cloudinary.com/yuppiechef/image/upload/v1464693960/blog/leagueofbeers/Hero-Banner-Brewdog-Article-Banner_czvrx9.jpg" style="position: cover;" >
+          <figcaption>
+            <h2>Spirit</h2>
+            <p>Blend of artistry and rebellion.</p>
+            <a href="#">View more</a>
+          </figcaption>
+        </figure>
+
+        <figure class="effect-brewdog">
+          <img src="http://fabrikbrands.com/wp-content/uploads/BrewDog-1.jpg">
+          <figcaption>
+            <h2>Beers</h2>
+            <p>Extra Pale Malt; Chinook, Ahtanum, Amarillo, Cascade, Simcoe, Nelson Sauvin hops. </p>
+            <a href="#">View more</a>
+          </figcaption>
+        </figure>
+
+        <figure class="effect-brewdog">
+          <img src="http://cidertoday.co.uk/wp-content/uploads/2018/06/brewdogagm0418a-1080x675.jpg">
+          <figcaption>
+            <h2>Cider</h2>
+
+          </figcaption>
+        </figure>
+
+
+      </div>
 
 
 <div id="contact" class="footer" style = "width=100%vw; color: #dce2e8;" >
   <div class = footer-personal-info>
-
-
    </div>
   <div class="footer-links">
     <a href="mailto:ginachen588@gmail.com"><i class="far fa-envelope-open"></i></a>
@@ -67,17 +99,32 @@ img { width:55px; }
   </div>
 
 
+</div>
+
+
 
 
 
 <script>
  const btn = document.getElementById('btn');
+  const beers = document.getElementById('beers');
+  const community = document.getElementById('community');
+
 
 btn.addEventListener('click', () => window.scrollTo({
   top: 550,
   behavior: 'smooth',
 }));
 
+beers.addEventListener('click', () => window.scrollTo({
+  top: 550,
+  behavior: 'smooth',
+}));
+
+community.addEventListener('click', () => window.scrollTo({
+  top: 2800,
+  behavior: 'smooth',
+}));
 </script>
 
 
